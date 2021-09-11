@@ -12,7 +12,7 @@ module.exports = function validatePaletteInput(data) {
     if (!validHue(parseInt(data.primaryHue))) {
       errors.primaryHue = 'Valid primary hue required';
     }
-
+    
     if (!Number.isInteger(parseInt(data.numHarmonies))) {
         errors.numHarmonies = 'Number of harmonies must be integer'
     } else if (validHarmonies(data.Harmonies)) {

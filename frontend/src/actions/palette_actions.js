@@ -2,7 +2,7 @@ import {
     getAllPalettes, 
     getUserPalettes, 
     savePalette 
-} from "../util/palette_api_util";
+} from "../util/palettes_api_util";
 
 //action constants
 export const RECEIVE_ALL_PALETTES = "RECEIVE_ALL_PALETTES";

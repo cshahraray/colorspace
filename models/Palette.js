@@ -16,6 +16,11 @@ const PaletteSchema = new mongoose.Schema({
         required: true
     },
 
+    complement: {
+        type: Boolean,
+        required: true
+    },
+
     numHarmonies: {
         type: Number,
         required: true,

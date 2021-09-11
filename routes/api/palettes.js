@@ -49,7 +49,8 @@ router.post('/',
         numHarmonies: req.body.numHarmonies,
         harmonies: req.body.harmonies,
         shadesLightness: req.body.shadesLightness,
-        shadesSaturation: req.body.shadesSaturation
+        shadesSaturation: req.body.shadesSaturation,
+        complement: req.body.complement
       });
   
       newPalette.save().then(tweet => res.json(tweet));
