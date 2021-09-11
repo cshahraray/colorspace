@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const passport = require('passport');
+
 const users = require("./routes/api/users");
 const palettes = require("./routes/api/palettes");
 // const bodyParser = require('body-parser');
@@ -20,7 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //import routes 
-app.get("/", (req, res) => res.send("Hello World"));
+app.use(passport.initialize());
+require('./config/passport')(passport);
 app.use("/api/users", users);   
 app.use("/api/palettes", palettes);
 
