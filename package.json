@@ -1,0 +1,33 @@
+{
+  "name": "colorspace",
+  "version": "1.0.0",
+  "description": "MERN application allowing users to create and share color palettes.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cshahraray/colorspace.git"
+  },
+  "author": "Kamran Shahraray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cshahraray/colorspace/issues"
+  },
+  "homepage": "https://github.com/cshahraray/colorspace#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.5",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
