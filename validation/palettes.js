@@ -9,11 +9,11 @@ const validLightnessSatArray = require("./valid-lightness-sat-array");
 module.exports = function validatePaletteInput(data) {
     let errors = {};
   
-    if (!validHue(data.primaryHue)) {
+    if (!validHue(parseInt(data.primaryHue))) {
       errors.primaryHue = 'Valid primary hue required';
     }
 
-    if (!Number.isInteger(data.numHarmonies)) {
+    if (!Number.isInteger(parseInt(data.numHarmonies))) {
         errors.numHarmonies = 'Number of harmonies must be integer'
     } else if (validHarmonies(data.Harmonies)) {
         errors.harmonies = 'Invalid harmony values'

@@ -6,7 +6,7 @@ const validHarmonies = (array) => {
         return false;
     }
     let i = 0;
-    while (validHue(array[i]) && i < array.length) {
+    while (validHue(parseInt(array[i])) && i < array.length) {
         i ++;
     }
 

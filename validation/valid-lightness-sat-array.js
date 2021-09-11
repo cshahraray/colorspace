@@ -7,7 +7,7 @@ const validLightnessSatArray = array => {
     }
     let i = 0
 
-    while (validLightnessSat(array[i]) && i < 5) {
+    while (validLightnessSat(parseInt(array[i])) && i < 5) {
         i++;
     }
 
