@@ -9,13 +9,22 @@ const validatePaletteInput = require('../../validation/palettes');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the palettes route" }));
 
+//backend api INDEX ROUTE for all palettes /api/palettes
+router.get('/', (req, res) => {
+    Palette.find()
+        .sort({ date: -1 })
+        .then(palette => res.json(palette))
+        .catch(err => res.status(404).json({ nopalettesfound: 'No palettes found :(' }));
+});
+
+//backend api POST ROUTE /api/palettes/
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
       req.body.shadesSaturation = req.body.shadesSaturation.split(', ')
       req.body.shadesLightness = req.body.shadesLightness.split(', ')
       req.body.harmonies = req.body.harmonies.split(', ')
-      
+
       const { errors, isValid } = validatePaletteInput(req.body);
       console.log(req.body.shadesSaturation)
       if (!isValid) {
