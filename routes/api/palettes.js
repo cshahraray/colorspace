@@ -17,6 +17,17 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ nopalettesfound: 'No palettes found :(' }));
 });
 
+//backend api USER SHOW ROUTE for all palettes by user /api/palettes/user/:user_id
+router.get('/user/:user_id', (req, res) => {
+    Palette.find({user: req.params.user_id})
+        .then(palettes => res.json(palettes))
+        .catch(err =>
+            res.status(404).json({ nopalettesfound : 'No palettes found from that user' }
+        )
+    );
+});
+
+
 //backend api POST ROUTE /api/palettes/
 router.post('/',
     passport.authenticate('jwt', { session: false }),
