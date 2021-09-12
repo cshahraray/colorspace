@@ -21,6 +21,8 @@ class NavBar extends React.Component {
               <div>
 
                   <Link to={'/createPalette'}>Create a Color Palette</Link>
+                  <Link to={'/profile'}>Your Palettes</Link>
+                  <Link to={'/'}>Home</Link>
                   <Button onClick={this.logoutUser}>Logout</Button>
               </div>
           );

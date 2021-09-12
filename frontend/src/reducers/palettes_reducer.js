@@ -1,7 +1,8 @@
 import { 
     RECEIVE_ALL_PALETTES,
     RECEIVE_USER_PALETTES,
-    RECEIVE_NEW_PALETTE
+    RECEIVE_NEW_PALETTE,
+    REMOVE_PALETTE
 
 } from "../actions/palette_actions";
 

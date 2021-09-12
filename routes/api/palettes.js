@@ -27,6 +27,16 @@ router.get('/user/:user_id', (req, res) => {
     );
 });
 
+//backend api get one PALETTE
+router.get('/:palette_id', (req, res) => {
+    Palette.findOne ({_id: req.params.palette_id})
+        .then(palette => res.json(palette))
+        .catch(err =>
+            res.status(404).json({ nopalettefound : 'No palette found with that id ' }
+        )
+    );
+});
+
 
 //backend api POST ROUTE /api/palettes/
 router.post('/',
@@ -56,4 +66,15 @@ router.post('/',
       newPalette.save().then(tweet => res.json(tweet));
     }
   );
+
+
+//backend API palette DELETE route
+
+router.delete('/:palette_id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Palette.remove({_id: req.params.palette_id})
+            .then(palette => res.json(palette))
+    }
+)
 module.exports = router;

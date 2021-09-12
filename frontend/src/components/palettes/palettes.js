@@ -13,10 +13,7 @@ export const Palettes = (props) => {
                 <>
                 {props.palettes.map(palette => (
                 <PaletteDetail key={palette._id}
-                primaryHue={palette.primaryHue}
-                numHarmonies={palette.numHarmonies}
-                shadesSaturation={palette.shadesSaturation}
-                shadesLightness={palette.shadesLightness}  />))}
+                palette={palette}  />))}
                 </>
             )
         } else {

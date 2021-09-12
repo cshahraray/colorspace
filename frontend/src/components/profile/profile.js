@@ -13,10 +13,7 @@ const Profile = (props) => {
             return (
                 props.palettes.map(palette => (
             <PaletteDetail key={palette._id}
-            primaryHue={palette.primaryHue}
-            numHarmonies={palette.numHarmonies}
-            shadesSaturation={palette.shadesSaturation}
-            shadesLightness={palette.shadesLightness} />
+            palette = {palette} />
             )  ))
         } else {
             return ("This user does not have any palettes yet :(")
